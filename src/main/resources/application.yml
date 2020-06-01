@@ -1,0 +1,17 @@
+server:
+    port: 9090
+spring:
+    datasource:
+        platform: ${DB_PLATFORM}
+        url: ${DB_URL}
+        username: ${DB_USER}
+        password: ${DB_PASSWORD}
+        initialization-mode:  ${DB_SEED}
+    jpa:
+        hibernate:
+            ddl-auto: ${DB_DDL}
+
+management:
+    endpoints:
+        web.exposure.include: health,metrics
+        jmx.exposure.exclude: info
